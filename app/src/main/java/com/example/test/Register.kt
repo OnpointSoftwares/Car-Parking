@@ -29,7 +29,7 @@ class Register: ComponentActivity() {
         startActivity(intent)
         }
         registerbtn.setOnClickListener {
-            if(email.text.toString()!="" && password.text.toString()!="")
+            if(email.text.toString()!="" ||password.text.toString()!=""||name.text.toString()!=""||NumberPlate.text.toString()!="")
             {
                 Toast.makeText(this,email.text.toString(),Toast.LENGTH_LONG).show()
                 firebaseAuth.createUserWithEmailAndPassword(email.text.toString(),password.text.toString()).addOnCompleteListener {
@@ -43,7 +43,7 @@ class Register: ComponentActivity() {
 
                     }
                     else{
-                        Toast.makeText(this,"Invalid credentials",Toast.LENGTH_LONG).show()
+                        Toast.makeText(this,"Error",Toast.LENGTH_LONG).show()
                     }
                 }
             }
