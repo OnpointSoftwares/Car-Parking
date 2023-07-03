@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.google.firebase.*
 import androidx.activity.ComponentActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class Register: ComponentActivity() {
     @SuppressLint("MissingInflatedId")
@@ -34,8 +35,12 @@ class Register: ComponentActivity() {
                 firebaseAuth.createUserWithEmailAndPassword(email.text.toString(),password.text.toString()).addOnCompleteListener {
                     if(it.isSuccessful)
                     {
+                        val database:FirebaseDatabase=FirebaseDatabase.getInstance()
+                        val ref=database.reference
+                        ref.child("Users").child(email.text.toString()).setValue(User(name.text.toString(), NumberPlate.text.toString(),email.text.toString()).toString()).addOnCompleteListener {
+                            Toast.makeText(this,"Successful",Toast.LENGTH_LONG).show()
+                        }
 
-                        Toast.makeText(this,"Successful",Toast.LENGTH_LONG).show()
                     }
                     else{
                         Toast.makeText(this,"Invalid credentials",Toast.LENGTH_LONG).show()
