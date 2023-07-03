@@ -29,7 +29,8 @@ class MainActivity : ComponentActivity() {
                 firebaseAuth.signInWithEmailAndPassword(email.text.toString(),password.text.toString()).addOnCompleteListener {
                     if(it.isSuccessful)
                     {
-                        Toast.makeText(this,"Successful",Toast.LENGTH_LONG).show()
+                        val intent=Intent(this,MainActivity2::class.java)
+                        startActivity(intent)
                     }
                     else{
                         Toast.makeText(this,"Invalid credentials",Toast.LENGTH_LONG).show()
