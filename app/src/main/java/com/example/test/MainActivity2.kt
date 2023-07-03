@@ -57,11 +57,8 @@ class MainActivity2 : AppCompatActivity() {
 
         })
         // on below line we are adding data to our list
-        courseList.add(parking_Model("Android Development","Available"))
-        courseList.add(parking_Model("C++ Development", "available"))
-        courseList.add(parking_Model("Java Development", "available"))
-        courseList.add(parking_Model("Python Development", "Available"))
-        courseList.add(parking_Model("JavaScript Development", "Available"))
+        courseList.add(parking_Model("1","Available"))
+        courseList.add(parking_Model("2", "Booked"))
 
         // on below line we are notifying adapter
         // that data has been updated.
