@@ -41,7 +41,7 @@ class MainActivity2 : AppCompatActivity() {
         // Read from the database
         val database:FirebaseDatabase=FirebaseDatabase.getInstance()
         val myRef=database.reference.child("parkings")
-        myRef.addValueEventListener(object: ValueEventListener {
+       /* myRef.addValueEventListener(object: ValueEventListener {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 // This method is called once with the initial value and again
@@ -55,7 +55,7 @@ class MainActivity2 : AppCompatActivity() {
                 Log.w(TAG, "Failed to read value.", error.toException())
             }
 
-        })
+        })*/
         // on below line we are adding data to our list
         courseList.add(parking_Model("1","Available"))
         courseList.add(parking_Model("2", "Booked"))
