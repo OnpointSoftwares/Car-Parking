@@ -19,19 +19,18 @@
 
         <!--on below line we are creating
             a simple image view-->
-        <ImageView
-            android:id="@+id/idIVCourse"
+        <TextView
+            android:id="@+id/idTVParking"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
             android:layout_margin="8dp"
-            android:padding="5dp"
-            android:src="@mipmap/ic_launcher" />
+            android:padding="5dp" />
 
         <!--on below line we are creating
             a simple text view-->
         <TextView
-            android:id="@+id/idTVCourse"
+            android:id="@+id/idTVAvailability"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

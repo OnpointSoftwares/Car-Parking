@@ -34,8 +34,8 @@ class Parking_Adapter(
 
     override fun onBindViewHolder(holder: Parking_Adapter.CourseViewHolder, position: Int) {
         // on below line we are setting data to our text view and our image view.
-        holder.courseNameTV.text = courseList.get(position).ParkingNumber
-        holder.courseIV.setImageResource(courseList.get(position).ParkingAvailability)
+        holder.parkingPosition.text = courseList.get(position).ParkingNumber
+        holder.parkingAvailability.text=courseList.get(position).ParkingAvailability
     }
 
     override fun getItemCount(): Int {
@@ -46,7 +46,7 @@ class Parking_Adapter(
 
     class CourseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // on below line we are initializing our course name text view and our image view.
-        val courseNameTV: TextView = itemView.findViewById(R.id.idTVCourse)
-        val courseIV: ImageView = itemView.findViewById(R.id.idIVCourse)
+        val parkingPosition: TextView = itemView.findViewById(R.id.idTVParking)
+        val parkingAvailability: TextView= itemView.findViewById(R.id.idTVAvailability)
     }
 }
