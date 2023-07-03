@@ -5,5 +5,5 @@ data class parking_Model(
     // two variable one for course name
     // and other for course image.
     var ParkingNumber: String,
-    var ParkingAvailability: Int
+    var ParkingAvailability: String
 )
