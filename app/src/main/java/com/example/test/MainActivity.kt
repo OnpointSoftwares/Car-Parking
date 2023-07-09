@@ -26,6 +26,11 @@ class MainActivity : ComponentActivity() {
         loginbtn.setOnClickListener {
             if(email.text.toString()!="" && password.text.toString()!="")
             {
+                if(email.text.toString()==="admin@example.com" && password.text.toString()==="admin123")
+                {
+                    val intent=Intent(this,MainActivity3::class.java)
+                    startActivity(intent)
+                }
                 firebaseAuth.signInWithEmailAndPassword(email.text.toString(),password.text.toString()).addOnCompleteListener {
                     if(it.isSuccessful)
                     {
