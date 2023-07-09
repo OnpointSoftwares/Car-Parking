@@ -19,12 +19,19 @@
 
         <!--on below line we are creating
             a simple image view-->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/car"
+            android:layout_gravity="center"
+            />
         <TextView
             android:id="@+id/idTVParking"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
             android:layout_margin="8dp"
+
             android:padding="5dp" />
 
         <!--on below line we are creating
@@ -41,6 +48,17 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             tools:ignore="RtlCompat" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:background="@color/purple_500"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Book"
+                />
+        </LinearLayout>
 
     </LinearLayout>
 
