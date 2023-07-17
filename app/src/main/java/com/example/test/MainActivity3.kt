@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
-import com.google.android.appbar.*
 
 class MainActivity3 : AppCompatActivity() {
 
