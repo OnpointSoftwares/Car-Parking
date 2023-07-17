@@ -26,19 +26,23 @@ class MainActivity : ComponentActivity() {
         loginbtn.setOnClickListener {
             if(email.text.toString()!="" && password.text.toString()!="")
             {
-                if(email.text.toString()==="admin@example.com" && password.text.toString()==="admin123")
+                Toast.makeText(this,"Validating...",Toast.LENGTH_LONG).show()
+                if(email.text.toString()=="admin@example.com" && password.text.toString()=="admin123")
                 {
                     val intent=Intent(this,MainActivity3::class.java)
                     startActivity(intent)
                 }
-                firebaseAuth.signInWithEmailAndPassword(email.text.toString(),password.text.toString()).addOnCompleteListener {
-                    if(it.isSuccessful)
-                    {
-                        val intent=Intent(this,MainActivity2::class.java)
-                        startActivity(intent)
-                    }
-                    else{
-                        Toast.makeText(this,"Invalid credentials",Toast.LENGTH_LONG).show()
+                else {
+                    firebaseAuth.signInWithEmailAndPassword(
+                        email.text.toString(),
+                        password.text.toString()
+                    ).addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            val intent = Intent(this, MainActivity2::class.java)
+                            startActivity(intent)
+                        } else {
+                            Toast.makeText(this, "Invalid credentials", Toast.LENGTH_LONG).show()
+                        }
                     }
                 }
             }
