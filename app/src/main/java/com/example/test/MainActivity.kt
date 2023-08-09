@@ -19,6 +19,11 @@ class MainActivity : ComponentActivity() {
         val password:EditText=findViewById(R.id.editTextPassword)
         val loginbtn:Button=findViewById(R.id.buttonLogin)
         val regbtn:Button=findViewById(R.id.buttonRegister)
+        if(firebaseAuth.currentUser?.email!="")
+        {
+            val intent = Intent(this, MainActivity2::class.java)
+            startActivity(intent)
+        }
         regbtn.setOnClickListener {
             val intent=Intent(this,Register::class.java)
             startActivity(intent)

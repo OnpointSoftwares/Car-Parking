@@ -21,13 +21,10 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         courseRV = findViewById(R.id.idRVCourses)
-
+        //val1=parking_Model("taken","1")
+        //val2=parking_Model("not taken","2")
         // on below line we are initializing our list
         courseList = ArrayList()
-
-        // on below line we are creating a variable
-        // for our grid layout manager and specifying
-        // column count as 2
         val layoutManager = GridLayoutManager(this, 2)
 
         courseRV.layoutManager = layoutManager
@@ -41,24 +38,27 @@ class MainActivity2 : AppCompatActivity() {
         // Read from the database
         val database:FirebaseDatabase=FirebaseDatabase.getInstance()
         val myRef=database.reference.child("parkings")
-       /* myRef.addValueEventListener(object: ValueEventListener {
+        courseList.add(parking_Model("yes","available"))
+        myRef.addValueEventListener(object: ValueEventListener {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                val value = snapshot.getValue<String>()
-                Log.d(TAG, "Value is: $value")
-            Toast.makeText(this@MainActivity2,value,Toast.LENGTH_LONG).show()
+                    for(dat in snapshot.children)
+                    {
+                        val val1=dat.child("ParkingAvailability").value.toString()
+                        val val2=dat.child("ParkingNumber").value.toString()
+                        courseList.add(parking_Model(val1,val2))
+                        courseList.add(parking_Model("yes","available"))
+                    }
             }
 
             override fun onCancelled(error: DatabaseError) {
                 Log.w(TAG, "Failed to read value.", error.toException())
             }
 
-        })*/
+        })
         // on below line we are adding data to our list
-        courseList.add(parking_Model("1","Available"))
-        courseList.add(parking_Model("2", "Booked"))
 
         // on below line we are notifying adapter
         // that data has been updated.
